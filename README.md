@@ -1,1 +1,1 @@
-# limpo-registry
+# Limpo Discovery Server
