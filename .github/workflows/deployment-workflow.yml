@@ -36,5 +36,5 @@ jobs:
         script: |
           echo "Conncected to Linux machine"
           echo "Deployment started"
-          bash /home/jordan/cd-scripts/limpo-registry.sh
+          bash /home/jordan/cd-scripts/limpo-registry-deploy.sh
       
