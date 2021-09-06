@@ -26,4 +26,15 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       working-directory: ./registry
-      run: ./gradlew build
+      run: ./gradlew clean build
+    - name: Deploy to Digital Ocean
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{secrets.LINUX_HOST}}
+        username: ${{secrets.LINUX_USERNAME}}
+        password: ${{secrets.LINUX_PASSWORD}}
+        script: |
+          echo "Conncected to Linux machine"
+          echo "Deployment started"
+          bash /home/jordan/cd-scripts/limpo-registry.sh
+      
